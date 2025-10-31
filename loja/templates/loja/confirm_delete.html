@@ -1,0 +1,12 @@
+{% extends 'loja/base.html' %}
+
+{% block content %}
+  <h2>Confirmar Deleção</h2>
+  <p>Você tem certeza que deseja deletar o carro <strong>{{ object.marca }} {{ object.modelo }}</strong>?</p>
+
+  <form method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Sim, tenho certeza</button>
+    <a href="{% url 'carro_detalhe' object.pk %}" class="btn btn-secondary">Cancelar</a>
+  </form>
+{% endblock content %}

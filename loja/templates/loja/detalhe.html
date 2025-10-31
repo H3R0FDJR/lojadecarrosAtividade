@@ -1,0 +1,12 @@
+{% extends 'loja/base.html' %}
+
+{% block content %}
+  <h2>{{ object.marca }} {{ object.modelo }}</h2>
+  <p><strong>Ano:</strong> {{ object.ano }}</p>
+  <p><strong>Preço:</strong> R$ {{ object.preco }}</p>
+  <p><strong>Descrição:</strong></p>
+  <p>{{ object.descricao|linebreaks }}</p> <hr>
+  <a href="{% url 'carro_editar' object.pk %}" class="btn">Editar</a>
+  <a href="{% url 'carro_deletar' object.pk %}" class="btn btn-danger">Deletar</a>
+  <a href="{% url 'carro_listar' %}" class="btn btn-secondary">Voltar para Lista</a>
+{% endblock content %}

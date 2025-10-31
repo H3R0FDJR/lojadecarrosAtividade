@@ -1,0 +1,20 @@
+{% extends 'loja/base.html' %}
+
+{% block content %}
+  <h2>Nossos Carros</h2>
+  <a href="{% url 'carro_novo' %}" class="btn" style="margin-bottom: 20px;">+ Adicionar Novo Carro</a>
+
+  {% for carro in carros %} <div class="car-item">
+        <h3>
+            <a href="{% url 'carro_detalhe' carro.pk %}">
+                {{ carro.marca }} {{ carro.modelo }} ({{ carro.ano }})
+            </a>
+        </h3>
+        <p><strong>Preço:</strong> R$ {{ carro.preco }}</p>
+        <a href="{% url 'carro_editar' carro.pk %}" class="btn btn-secondary">Editar</a>
+        <a href="{% url 'carro_deletar' carro.pk %}" class="btn btn-danger">Deletar</a>
+    </div>
+  {% empty %}
+    <p>Nenhum carro cadastrado ainda.</p>
+  {% endfor %}
+{% endblock content %}

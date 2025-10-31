@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-A">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Carros</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; background: #f4f4f4; }
+        nav { background: #333; padding: 10px; margin-bottom: 20px; }
+        nav a { color: white; text-decoration: none; padding: 10px; }
+        .container { background: white; padding: 20px; border-radius: 5px; }
+        .car-item { border-bottom: 1px solid #ccc; padding: 10px 0; }
+        form { display: flex; flex-direction: column; max-width: 400px; }
+        form p { margin: 5px 0; }
+        form input, form textarea { padding: 8px; font-size: 1em; }
+        .btn { padding: 10px; background: #007bff; color: white; text-decoration: none; border: none; cursor: pointer; border-radius: 3px; }
+        .btn-danger { background: #dc3545; }
+        .btn-secondary { background: #6c757d; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'carro_listar' %}"><h1>Loja de Carros</h1></a>
+    </nav>
+    <div class="container">
+        {% block content %}
+        {% endblock content %}
+    </div>
+</body>
+</html>
