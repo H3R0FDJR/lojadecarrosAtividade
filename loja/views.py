@@ -10,11 +10,15 @@ from django.views.generic import (
 )
 from django.urls import reverse_lazy
 from .models import Carro
+from django_filters.views import FilterView
+from .filters import CarroFilter
 
-class CarroListView(ListView):
+class CarroListView(FilterView):
     model = Carro
+    filterset_class = CarroFilter
     template_name = 'loja/listar.html'  
-    context_object_name = 'carros'      
+    context_object_name = 'carros'
+    paginate_by = 5   
 
 class CarroDetailView(DetailView):
     model = Carro

@@ -1,10 +1,21 @@
 {% extends 'loja/base.html' %}
 
 {% block content %}
+  
+  <h2>Filtrar Carros</h2>
+  <form method="GET" action="">
+      {% csrf_token %} 
+      
+      {{ filter.form.as_p }} 
+      
+      <button type="submit">Filtrar</button>
+  </form>
+  <hr>
   <h2>Nossos Carros</h2>
   <a href="{% url 'carro_novo' %}" class="btn" style="margin-bottom: 20px;">+ Adicionar Novo Carro</a>
 
-  {% for carro in carros %} <div class="car-item">
+  {% for carro in carros %} 
+  <div class="car-item">
         <h3>
             <a href="{% url 'carro_detalhe' carro.pk %}">
                 {{ carro.marca }} {{ carro.modelo }} ({{ carro.ano }})
@@ -17,4 +28,5 @@
   {% empty %}
     <p>Nenhum carro cadastrado ainda.</p>
   {% endfor %}
+  {% include 'loja/paginacao.html' %}
 {% endblock content %}

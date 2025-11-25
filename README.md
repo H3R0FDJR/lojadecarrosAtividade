@@ -45,3 +45,16 @@ View Responsável:`CarroDeleteView`
 Template:`loja/confirm_delete.html`
 
 ![Deletar](screenshots/Deletar.png)
+
+
+### ATIVIDADE DE PAGINAÇÃO E FILTROS ###
+
+1 - Escolhi fazer em um CRUD separado do projeto final para não correr risco de bagunçar tudo. Além do fato de trabalhar em um projeto
+menor possibilita ver melhor como o sistema funciona. 
+Busquei uma forma mais "simples" e "limpa" de fazer um filtro. O objetivo principal é implementar, no projeto final, um sistema de filtro que 
+interfira o mínimo possível nas views, acredito que isso deixa o código mais limpo, organizado e fácil de ser explicado.
+
+2 - Coloquei os filtros utilizados no projeto final em si, que são o nome do veículo e a marca e o ano do modelo, acredito que sejam os mais
+úteis em um sistema dessa natureza.
+
+3 - Algumas, em especial na implementação dessa nova forma de inserir filtros, resolvi com IA.
